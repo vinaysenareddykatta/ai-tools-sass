@@ -13,6 +13,11 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { Empty } from "@/components/empty";
+import { Loader } from "@/components/loader";
+import { cn } from "@/lib/utils";
+import { UserAvatar } from "@/components/user-avatar";
+import { BotAvatar } from "@/components/bot-avatar";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -86,7 +91,35 @@ const ConversationPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-4">
-          <div className="">{JSON.stringify(messages)}</div>
+          {isLoading && (
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+              <Loader />
+            </div>
+          )}
+          {messages.length === 0 && !isLoading && (
+            <div className="">
+              <Empty label="No conversations started" />
+            </div>
+          )}
+
+          <div className="flex flex-col-reverse gap-y-4">
+            {messages.map((message) => {
+              return (
+                <div
+                  key={message.content}
+                  className={cn(
+                    "p-8 w-full flex items-start rounded-lg gap-x-8",
+                    message.role === "user"
+                      ? "bg-white border border-black/10 justify-end "
+                      : "bg-muted"
+                  )}
+                >
+                  {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                  <p className="text-md">{message.content}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

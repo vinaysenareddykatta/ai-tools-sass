@@ -73,8 +73,8 @@ const Sidebar = () => {
           href="/dashboard"
           className="flex items-center p-2 mb-4 bg-teal-400 rounded-sm"
         >
-          <div className="relative w-8 h-8 mr-5">
-            <Image fill alt="logo" src="/chatbot.png" />
+          <div className="relative w-10 h-10 mr-5">
+            <Image fill alt="logo" src="/ai-logo.png" />
           </div>
           <h2
             className={cn(
