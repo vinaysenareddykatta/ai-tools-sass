@@ -14,46 +14,45 @@ import {
   VideoIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-
+export const tools = [
+  {
+    label: "Start a conversation",
+    icon: MessageSquare,
+    color: "text-pink-800",
+    bgColor: "bg-pink-100",
+    href: "/conversation",
+  },
+  {
+    label: "Generate images",
+    icon: ImageIcon,
+    color: "text-blue-900",
+    bgColor: "bg-blue-100",
+    href: "/image",
+  },
+  {
+    label: "Generate videos",
+    icon: VideoIcon,
+    color: "text-orange-900",
+    bgColor: "bg-orange-100",
+    href: "/video",
+  },
+  {
+    label: "Generate music",
+    icon: MusicIcon,
+    color: "text-lime-800",
+    bgColor: "bg-lime-100",
+    href: "/music",
+  },
+  {
+    label: "Generate code",
+    icon: Code,
+    color: "text-yellow-800",
+    bgColor: "bg-yellow-100",
+    href: "/code",
+  },
+];
 export default function Home() {
   const router = useRouter();
-  const tools = [
-    {
-      label: "Start a conversation",
-      icon: MessageSquare,
-      color: "text-pink-800",
-      bgColor: "bg-pink-100",
-      href: "/conversation",
-    },
-    {
-      label: "Generate images",
-      icon: ImageIcon,
-      color: "text-blue-900",
-      bgColor: "bg-blue-100",
-      href: "/image",
-    },
-    {
-      label: "Generate videos",
-      icon: VideoIcon,
-      color: "text-orange-900",
-      bgColor: "bg-orange-100",
-      href: "/video",
-    },
-    {
-      label: "Generate music",
-      icon: MusicIcon,
-      color: "text-lime-800",
-      bgColor: "bg-lime-100",
-      href: "/music",
-    },
-    {
-      label: "Generate code",
-      icon: Code,
-      color: "text-yellow-800",
-      bgColor: "bg-yellow-100",
-      href: "/code",
-    },
-  ];
 
   return (
     <div>
