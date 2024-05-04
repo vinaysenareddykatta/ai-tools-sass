@@ -14,7 +14,7 @@ import {
   VideoIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-export const tools: any = [
+const tools: any = [
   {
     label: "Start a conversation",
     icon: MessageSquare,
@@ -67,7 +67,7 @@ export default function Home() {
       </div>
       <Separator className="my-0 py-0" />
       <div className="m-4">
-        {tools.map((tool) => {
+        {tools.map((tool: any) => {
           return (
             <Card
               key={tool.href}
