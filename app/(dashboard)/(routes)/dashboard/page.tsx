@@ -14,7 +14,7 @@ import {
   VideoIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-export const tools = [
+export const tools: any = [
   {
     label: "Start a conversation",
     icon: MessageSquare,
